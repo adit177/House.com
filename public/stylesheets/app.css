@@ -1,0 +1,13 @@
+body{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+#cluster-map {
+    width: 100%;
+    height: 500px;
+}
+
+#map {
+    width: 100%;
+    height: 300px;
+}
