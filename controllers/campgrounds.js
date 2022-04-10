@@ -29,7 +29,7 @@ module.exports.createCampground = async (req, res, next) => {
     await campground.save();
     console.log(campground);
     req.flash('success', 'Successfully added your House!');
-    res.redirect(`/campgrounds/${campground._id}`)
+    res.redirect(`/houses/${campground._id}`)
 }
 
 module.exports.showCampground = async (req, res,) => {
@@ -70,12 +70,12 @@ module.exports.updateCampground = async (req, res) => {
         await campground.updateOne({ $pull: { images: { filename: { $in: req.body.deleteImages } } } })
     }
     req.flash('success', 'Successfully updated house!');
-    res.redirect(`/campgrounds/${campground._id}`)
+    res.redirect(`/houses/${campground._id}`)
 }
 
 module.exports.deleteCampground = async (req, res) => {
     const { id } = req.params;
     await Campground.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted your house!')
-    res.redirect('/campgrounds');
+    res.redirect('/houses');
 }
