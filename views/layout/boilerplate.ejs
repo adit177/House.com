@@ -12,10 +12,22 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="/stylesheets/app.css">
-    
+    <style>
+        #preloader{
+           background: rgb(227, 239, 244) url("https://media.giphy.com/media/xTk9ZvMnbIiIew7IpW/giphy.gif") no-repeat center center;
+           background-size: 20%;
+           height: 100vh;
+           width: 100%;
+           position: fixed;
+           z-index: 100;
+       }
+   </style>
 </head>
 
 <body class="d-flex flex-column vh-100" style="background-color: rgb(232, 243, 238);">
+
+    <div id="preloader"></div>
+
     <%- include('../partials/navbar')%>
     <main class="container mt-3" >
         <%- include('../partials/flash')%>
@@ -31,6 +43,12 @@
         <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
 
     <script src='/javascripts/validateForms.js'></script>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display="none";
+        })
+    </script>
 </body>
 
 </html>
